@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y apache2 wget unzip
 RUN cd /var/www/html
 
 # download webfiles
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip
+RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/neogym.zip
 
 # unzip folder
-RUN unzip healet.zip
+RUN unzip neogym.zip
 
 # copy files into html directory
-RUN cp -rvf healet-html/* /var/www/html
+RUN cp -rvf neogym-html/* /var/www/html
 
 # remove unwanted folders
 ## RUN rm -rf photogenic photogenic.zip
@@ -32,18 +32,3 @@ EXPOSE 80
 
 # command to start when to docker start
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-
- 
- 
-# FROM  centos:latest
-# MAINTAINER vikashashoke@gmail.com
-# RUN yum install -y httpd \
-#  zip\
-#  unzip
-# ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
-# WORKDIR /var/www/html/
-# RUN unzip shine.zip
-# RUN cp -rvf shine/* .
-# RUN rm -rf shine shine.zip
-# CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-# EXPOSE 80   
