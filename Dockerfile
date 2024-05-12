@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y apache2 wget unzip
 RUN cd /var/www/html
 
 # download webfiles
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/neogym.zip
+RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip
 
 # unzip folder
-RUN unzip neogym.zip
+RUN unzip healet.zip
 
 # copy files into html directory
-RUN cp -rvf neogym-html/* /var/www/html
+RUN cp -rvf healet-html/* /var/www/html
 
 # remove unwanted folders
 ## RUN rm -rf photogenic photogenic.zip
