@@ -11,12 +11,13 @@ RUN apt-get update && apt-get install -y apache2 wget unzip
 RUN cd /var/www/html
 
 # download webfiles
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page288/startup.zip
+RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip
+
 # unzip folder
-RUN unzip startup.zip
+RUN unzip photogenic.zip
 
 # copy files into html directory
-RUN cp -rvf startup-website-template/* /var/www/html
+RUN cp -rvf photogenic/* /var/www/html
 
 # remove unwanted folders
 ## RUN rm -rf photogenic photogenic.zip
