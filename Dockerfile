@@ -11,13 +11,12 @@ RUN apt-get update && apt-get install -y apache2 wget unzip
 RUN cd /var/www/html
 
 # download webfiles
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip
-
+RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page288/startup.zip
 # unzip folder
-RUN unzip oxer.zip
+RUN unzip startup.zip
 
 # copy files into html directory
-RUN cp -rvf oxer-html/* /var/www/html
+RUN cp -rvf startup-website-template/* /var/www/html
 
 # remove unwanted folders
 ## RUN rm -rf photogenic photogenic.zip
