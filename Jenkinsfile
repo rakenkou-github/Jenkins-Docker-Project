@@ -22,9 +22,9 @@ node() {
     }
     
     stage("Docker Container Deployment"){
-        def docker_run = 'docker run -itd --name scriptedcontainer -p 9000:80 akenkour/docker-groovy-webapp:latest'
+        def docker_run = 'docker run -itd --name scriptedcontainer -p 9000:80 akenkour/$JOB_NAME:latest'
         def docker_rmv_container = 'docker rm -f scriptedcontainer'
-        def docker_rmi = 'docker rmi -f akenkour/docker-groovy-webapp'
+        def docker_rmi = 'docker rmi -f akenkour/$JOB_NAME'
         // container deployment need to be done on remote host server DOCKER-Host so ssh-Agent plugin required in jenkins
         sshagent(['webapp_server']) {
             sh "ssh -o StrictHostKeyChecking=no ubuntu@172.20.10.104 ${docker_rmv_container}"
